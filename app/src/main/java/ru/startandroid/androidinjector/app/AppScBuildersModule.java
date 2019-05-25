@@ -4,8 +4,8 @@ import android.app.Activity;
 
 import dagger.Binds;
 import dagger.Module;
-import dagger.android.ActivityKey;
 import dagger.android.AndroidInjector;
+import dagger.multibindings.ClassKey;
 import dagger.multibindings.IntoMap;
 import ru.startandroid.androidinjector.first.FirstActivity;
 import ru.startandroid.androidinjector.first.dagger.FirstActivityComponent;
@@ -19,20 +19,20 @@ public abstract class AppScBuildersModule {
 
     @Binds
     @IntoMap
-    @ActivityKey(FirstActivity.class)
-    abstract AndroidInjector.Factory<? extends Activity>
+    @ClassKey(FirstActivity.class)
+    abstract AndroidInjector.Factory<?>
     bindFirstActivityInjectorFactory(FirstActivityComponent.Builder builder);
 
     @Binds
     @IntoMap
-    @ActivityKey(SecondActivity.class)
-    abstract AndroidInjector.Factory<? extends Activity>
+    @ClassKey(SecondActivity.class)
+    abstract AndroidInjector.Factory<?>
     bindSecondActivityInjectorFactory(SecondActivityComponent.Builder builder);
 
     @Binds
     @IntoMap
-    @ActivityKey(ThirdActivity.class)
-    abstract AndroidInjector.Factory<? extends Activity>
+    @ClassKey(ThirdActivity.class)
+    abstract AndroidInjector.Factory<?>
     bindThirdActivityInjectorFactory(ThirdActivityComponent.Builder builder);
 
 }
