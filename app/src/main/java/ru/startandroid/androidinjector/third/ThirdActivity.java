@@ -8,13 +8,13 @@ import javax.inject.Inject;
 
 import dagger.android.AndroidInjection;
 import dagger.android.DispatchingAndroidInjector;
-import dagger.android.HasDispatchingFragmentInjector;
+import dagger.android.HasFragmentInjector;
 import ru.startandroid.androidinjector.R;
 import ru.startandroid.androidinjector.common.Constants;
 import ru.startandroid.androidinjector.third.fragments.bottom.BottomFragment;
 import ru.startandroid.androidinjector.third.fragments.top.TopFragment;
 
-public class ThirdActivity extends AppCompatActivity implements HasDispatchingFragmentInjector {
+public class ThirdActivity extends AppCompatActivity implements HasFragmentInjector {
 
     @Inject DispatchingAndroidInjector<Fragment> fragmentInjector;
 

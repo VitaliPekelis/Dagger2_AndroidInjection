@@ -1,11 +1,10 @@
 package ru.startandroid.androidinjector.third.dagger;
 
-import android.app.Fragment;
 
 import dagger.Binds;
 import dagger.Module;
 import dagger.android.AndroidInjector;
-import dagger.android.FragmentKey;
+import dagger.multibindings.ClassKey;
 import dagger.multibindings.IntoMap;
 import ru.startandroid.androidinjector.third.fragments.bottom.BottomFragment;
 import ru.startandroid.androidinjector.third.fragments.bottom.dagger.BottomFragmentComponent;
@@ -17,14 +16,14 @@ public abstract class ThirdActivitySubcomponentBuildersModule {
 
     @Binds
     @IntoMap
-    @FragmentKey(TopFragment.class)
-    abstract AndroidInjector.Factory<? extends Fragment>
+    @ClassKey(TopFragment.class)
+    abstract AndroidInjector.Factory<?>
     bindTopFragmentInjectorFactory(TopFragmentComponent.Builder builder);
 
     @Binds
     @IntoMap
-    @FragmentKey(BottomFragment.class)
-    abstract AndroidInjector.Factory<? extends Fragment>
+    @ClassKey(BottomFragment.class)
+    abstract AndroidInjector.Factory<?>
     bindBottomFragmentInjectorFactory(BottomFragmentComponent.Builder builder);
 
 }
